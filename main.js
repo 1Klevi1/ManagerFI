@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
 // This will store the reference to the window.
@@ -12,14 +12,14 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true, // Allow access to Node.js modules
             contextIsolation: false,
-            preload: path.join(__dirname, 'preload.js'), // Optional, for security and IPC communication
         },
     });
 
     // Load your React app's build folder (output from React's build)
-    mainWindow.loadURL('http://localhost:5000'); // If you're running the React dev server
-    // OR if you have built the app, use:
-    // mainWindow.loadFile(path.join(__dirname, 'build', 'index.html'));
+    mainWindow.loadFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+
+    // If you want to load from production build, uncomment this line and comment the above:
+    // mainWindow.loadFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
 
     // Open DevTools (optional)
     mainWindow.webContents.openDevTools();

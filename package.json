@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "cd frontend && npm start",
-    "start:backend": "cd backend && npm start"
+    "start:backend": "cd backend && npm start",
+    "e": "npm run build && electron .",
+    "build": "cd frontend && npm run build"
   },
   "private": true,
   "dependencies": {
@@ -16,8 +18,8 @@
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "concurrently": "^7.0.0",
     "electron": "^35.1.5",
-    "concurrently": "^7.0.0"
-
+    "electron-packager": "^17.1.2"
   }
 }
