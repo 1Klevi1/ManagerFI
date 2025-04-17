@@ -9,17 +9,22 @@
     "start:frontend": "cd frontend && npm start",
     "start:backend": "cd backend && npm start",
     "e": "npm run build && electron .",
-    "build": "cd frontend && npm run build"
+    "build": "cd frontend && npm run build",
+    "package": "electron-packager . FI-App --overwrite --asar --platform=win32 --arch=x64 --icon=icon.ico --prune=true --out=release-build"
   },
   "private": true,
   "dependencies": {
+    "@electron/remote": "^2.1.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "node-fetch": "^3.3.2",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^2.5.0",
     "concurrently": "^7.0.0",
     "electron": "^35.1.5",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "electron-rebuild": "^3.2.9"
   }
 }

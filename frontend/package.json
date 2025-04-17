@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "path-browserify": "^1.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.5.0",
@@ -15,8 +16,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -40,7 +41,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "electron-rebuild": "^3.2.9",
     "postcss": "^8.5.3",
+    "react-app-rewired": "^2.2.1",
     "tailwindcss": "^4.1.4"
   }
 }
